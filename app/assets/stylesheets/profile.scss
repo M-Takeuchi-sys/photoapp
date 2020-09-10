@@ -1,0 +1,86 @@
+@import './variables';
+
+$image_size: 76px;
+
+.profilePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &_account {
+    margin-bottom: 32px;
+    color: #333A42;
+  }
+
+  &_user {
+    display: flex;
+    justify-content: center;
+
+    &_image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 84px;
+      height: 84px;
+      border: 1px solid #E91E63;
+      border-radius: 100%;
+
+      img {
+        width: $image_size;
+        height: $image_size;
+        border-radius: 100%;
+      }
+    }
+  }
+  &_value {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 43px;
+  
+    &_posts {
+      display: inline;
+      width: 75px;
+
+      &_count {
+        text-align: center;
+        color: #333A42;
+      }
+      &_text {
+        text-align: center;
+        font-size: 14px;
+        color: #9E9E9E;
+      }
+    }
+
+    &_followers {
+      display: inline;
+      width: 75px;
+
+      &_count {
+        text-align: center;
+        color: #333A42;
+      }
+      &_text {
+        text-align: center;
+        font-size: 14px;
+        color: #9E9E9E;
+      }
+    }
+
+    &_following {
+      display: inline;
+      width: 75px;
+
+      &_count {
+        text-align: center;
+        color: #333A42;
+      }
+      &_text {
+        text-align: center;
+        font-size: 14px;
+        color: #9E9E9E;
+      }
+    }
+  }
+}
