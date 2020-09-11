@@ -1,0 +1,31 @@
+.container
+  .profilePage
+    .profilePage_account
+      = current_user.account
+  = link_to edit_profile_path do
+    .profilePage_user
+      .profilePage_user_image
+        = image_tag current_user.avatar_image
+  .profilePage_value
+    .profilePage_value_posts
+      .profilePage_value_posts_count
+        %p 44
+      .profilePage_value_posts_text
+        %p Posts
+    .profilePage_value_followers
+      .profilePage_value_followers_count
+        %p 110
+      .profilePage_value_followers_text
+        %p Followers
+    .profilePage_value_following
+      .profilePage_value_following_count
+        %p 44
+      .profilePage_value_following_text
+        %p Following
+  .profilePage_photo
+    .profilePage_photo_one
+      = image_tag 'photo1.png'
+    .profilePage_photo_two
+      = image_tag 'photo2.png'
+    .profilePage_photo_three
+      = image_tag 'photo3.png'
