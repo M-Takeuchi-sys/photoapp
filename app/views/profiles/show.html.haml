@@ -2,10 +2,19 @@
   .profilePage
     .profilePage_account
       = current_user.account
-  = link_to edit_profile_path do
-    .profilePage_user
-      .profilePage_user_image
-        = image_tag current_user.avatar_image
+  .profilePage_user
+    .profilePage_user_image#image_preview
+      = image_tag current_user.avatar_image
+  %ul
+    - @profile.errors.full_messages.each do |message|
+      %li= message
+
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    %div{:hidden => ""}
+      = f.file_field :avatar, id: 'file_field'
+
+    = f.submit 'Seve', class: 'btn-primary_min'
+
   .profilePage_value
     .profilePage_value_posts
       .profilePage_value_posts_count

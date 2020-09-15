@@ -12,6 +12,20 @@
   margin-top: 45px;
 }
 
+.btn-primary_min {
+  background-color: $primary-color;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 84px;
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 .btn-secondary {
   background-color: white;
   border: solid 1px $primary-color;
