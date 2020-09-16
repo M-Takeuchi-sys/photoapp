@@ -1,3 +1,4 @@
+@import 'header';
 @import 'variables';
 @import 'form';
 @import 'buttons';
@@ -28,6 +29,10 @@ body {
   font-size: 1em;
   color: $text-base-color;
   font-style: $base-font-style;
+}
+
+.main {
+  padding-top: 50px;
 }
 
 .container {
