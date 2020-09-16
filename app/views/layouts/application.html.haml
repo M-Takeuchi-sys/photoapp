@@ -14,13 +14,17 @@
         - if !current_page?(root_path)
           = link_to :back do
             = image_tag 'back.png', class: 'header_back'
-      %p.header_pageTitle PhotoApp
-      .dropdown
-        .header_avatar
-          = image_tag 'default-avatar.png', class: 'header_avatar_img dropbtn'
-        .dropdown-content
-          %a{:href => "#"} プロフィール
-          %a{:href => "#"} ログアウト
+      %p.header_pageTitle
+        = link_to 'PhotoApp', root_path
+      - if user_signed_in?
+        .dropdown
+          .header_avatar
+            = image_tag current_user.avatar_image, class: 'header_avatar dropbtn'
+          .dropdown-content
+            = link_to 'プロフィール', profile_path
+            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+      - else
+        = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
     - if flash.present?
       .flash
         - flash.each do |key, value|
