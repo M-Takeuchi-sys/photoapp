@@ -21,6 +21,7 @@ $back-icon-size: 16px;
   &_logos {
     width: 40px;
     min-width: 0;
+    margin: 0 16px;
     display: flex;
 
     img {
@@ -43,14 +44,25 @@ $back-icon-size: 16px;
     justify-content: center;
     width: $avatar-size;
     height: $avatar-size;
+    margin: 0 16px;
     border: 1px solid #E91E63;
     border-radius: 100%;
 
-    &_img {
-      width: 32px;
-      height: 32px;
+    img {
+      width: 35px;
+      height: 35px;
       border-radius: 100%;
     }
+  }
+
+  .header_loginBtn {
+    background-color: $base-bg-color;
+    height: $avatar-size;
+    border: 1px solid #E91E63;
+    border-radius: 8px;
+    font-size: 5px;
+    padding: 12px 16px;
+    color: #000000;
   }
 }
 
