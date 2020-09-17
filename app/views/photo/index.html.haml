@@ -1,0 +1,19 @@
+.container
+  .tabs
+    .tabs_item.active
+      新着記事一覧
+    .tabs_item
+      タイムライン
+  - @photo.each do |photo|
+    .photo
+      .photo_image
+        = image_tag 'photo1.png'
+      .photo_content
+        .photo_title
+          = photo.content
+        .photo_detail
+          = image_tag photo.user.avatar_image
+          %div
+            %p= current_user.account
+            %p= photo.display_created_at
+
