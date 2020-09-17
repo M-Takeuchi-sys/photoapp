@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :account, uniqueness: true
 
   has_one :profile, dependent: :destroy
+  has_one :photo, dependent: :destroy
 
   def prepare_profile
     profile || build_profile

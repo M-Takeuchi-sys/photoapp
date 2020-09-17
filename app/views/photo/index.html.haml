@@ -1,0 +1,30 @@
+.container
+  .tabs
+    .tabs_item.active
+      新着記事一覧
+    .tabs_item
+      タイムライン
+  - @photo.each do |photo|
+    .photo
+      .photo_detail
+        = image_tag photo.user.avatar_image
+        %div
+          %p= current_user.account
+          %p= photo.display_created_at
+      .photo_image
+        .photo_image_one
+          = image_tag 'photo1.png'
+        .photo_image_two
+          = image_tag 'photo2.png'
+        .photo_image_three
+          = image_tag 'photo3.png'
+      .photo_icon
+        .photo_icon_heart
+          = image_tag 'heart.jpg'
+        .photo_icon_comment
+          = image_tag 'comment.jpg'
+        .photo_icon_share
+          = image_tag 'share.jpg'
+      .photo_content
+        .photo_title
+          %p= photo.content
