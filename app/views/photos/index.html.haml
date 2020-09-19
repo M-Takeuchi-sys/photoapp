@@ -2,7 +2,7 @@
   = link_to new_photo_path do
     .float_btn
       %i.fa.fa-camera.fa-2x
-  - @photo.each do |photo|
+  - @photos.each do |photo|
     .photo
       .photo_detail
         = image_tag photo.user.avatar_image
