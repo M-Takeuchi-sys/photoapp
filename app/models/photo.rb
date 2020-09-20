@@ -1,4 +1,6 @@
 class Photo < ApplicationRecord
+  validates :content, presence: true
+
   belongs_to :user
 
   def display_created_at

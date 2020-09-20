@@ -1,10 +1,8 @@
 .container
-  .tabs
-    .tabs_item.active
-      新着記事一覧
-    .tabs_item
-      タイムライン
-  - @photo.each do |photo|
+  = link_to new_photo_path do
+    .float_btn
+      %i.fa.fa-camera.fa-2x
+  - @photos.each do |photo|
     .photo
       .photo_detail
         = image_tag photo.user.avatar_image
