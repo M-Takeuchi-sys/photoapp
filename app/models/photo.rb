@@ -5,11 +5,19 @@ class Photo < ApplicationRecord
 
   belongs_to :user
 
-  def display_created_at
-    I18n.l(self.created_at, format: :default)
+  validate :images_presence
+
+  def images_presence
+    if images.attached?
+      if images.count >= 4
+        errors.add(:images, 'は3つまで指定できます')
+      end
+    else
+      errors.add(:images, 'ファイルを添付してください')
+    end
   end
 
-  def images_three
-    photo.images.first && photo.images.second && photo.images.third
+  def display_created_at
+    I18n.l(self.created_at, format: :default)
   end
 end
