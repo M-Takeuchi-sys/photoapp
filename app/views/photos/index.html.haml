@@ -9,13 +9,24 @@
         %div
           %p= current_user.account
           %p= photo.display_created_at
-      .photo_image
-        .photo_image_one
-          = image_tag 'photo1.png'
-        .photo_image_two
-          = image_tag 'photo2.png'
-        .photo_image_three
-          = image_tag 'photo3.png'
+      - if photo.images.first && photo.images.second && photo.images.third
+        .photo_image
+          .photo_image_one
+            = image_tag photo.images.first
+          .photo_image_two
+            = image_tag photo.images.second
+          .photo_image_three
+            = image_tag photo.images.third
+      - elsif photo.images.first && photo.images.second
+        .photo_image
+          .photo_image_one
+            = image_tag photo.images.first
+          .photo_image_two
+            = image_tag photo.images.second
+      - else photo.images.first
+        .photo_image
+          .photo_image_one
+            = image_tag photo.images.first
       .photo_icon
         .photo_icon_heart
           = image_tag 'heart.jpg'
