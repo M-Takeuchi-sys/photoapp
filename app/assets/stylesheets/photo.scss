@@ -21,13 +21,13 @@ $icon_size: 16px;
     }
   }
 
-  &_image {
+  &_image_three {
     display: grid;
     gap: 8px;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 110px 110px;
 
-    &_one {
+    &_first {
       grid-column: 1 / 2;
       grid-row: 1 / 3;
 
@@ -37,16 +37,53 @@ $icon_size: 16px;
       }
     }
 
-    &_two {
+    &_second {
 
       img {
-        display: block;
         width: 100%;
         height: 100%;
       }
     }
 
-    &_three {
+    &_third {
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &_image_two {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+
+    &_first {
+      grid-column: 1 / 2;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &_second {
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &_image_one {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px;
+
+    &_first {
 
       img {
         width: 100%;

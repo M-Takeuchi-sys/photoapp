@@ -8,4 +8,8 @@ class Photo < ApplicationRecord
   def display_created_at
     I18n.l(self.created_at, format: :default)
   end
+
+  def images_three
+    photo.images.first && photo.images.second && photo.images.third
+  end
 end
