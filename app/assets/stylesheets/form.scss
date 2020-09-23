@@ -1,6 +1,52 @@
   
 @import './variables';
 
+.form_header {
+  display: flex;
+  justify-content: space-between;
+
+  &_cance {
+    cursor: pointer;
+
+    a {
+      color: #2F80ED;
+      text-decoration: none;
+    }
+  }
+
+  &_status {
+    color: #333A42;
+  }
+
+  &_post {
+    color: #2F80ED;
+    cursor: pointer;
+  }
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 30px;
+
+  &_detail {
+    height: 40px;
+    padding-right: 18px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+  }
+
+  &_account {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
 input, select {
   &.text {
     width: 100%;
@@ -22,10 +68,41 @@ textarea, trix-editor {
   width: 100%;
   margin: 8px 0px;
   padding: 8px 8px;
-  min-height: 440px;
+  height: 34px;
   resize: vertical;
-  border: 1px solid #EBEBEB;
+  background-color: $base-bg-color;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #9E9E9E;
+  border-left: none;
   &.sm {
     min-height: 160px;
+  }
+}
+
+.image_input_btn{
+  display: block;
+  background-color: $base-bg-color;
+  width: 73px;
+  height: 24px;
+  margin-top: 24px;
+  border-radius: 5px;
+  padding-top: 2px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+}
+
+.display_none {
+  display: none;
+}
+
+.images_preview {
+  
+  img {
+    width: 33%;
+    height: 140px;
+    padding: 5px 5px;
   }
 }
