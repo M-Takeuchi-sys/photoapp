@@ -25,7 +25,9 @@
       = f.file_field :images ,multiple: true, class: 'display_none', id: 'imagesBtn'
     .images_preview#imagesPreview
       - if @photo.images.attached?
-        - photo.images.each do |image|
+        - @photo.images.each do |image|
           .photo_images
-            = image_tag images
+            = image_tag image
     = f.submit '保存', class: 'display_none', id: 'submitBtn'
+
+= javascript_pack_tag 'form'
