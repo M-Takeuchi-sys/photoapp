@@ -17,6 +17,10 @@ class PhotosController < ApplicationController
     end
   end
 
+  def edit
+    @photo = current_user.photos.find(params[:id])
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:content, images: [])

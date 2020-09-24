@@ -13,7 +13,7 @@
           .dropdown
             = image_tag 'actions.svg', class: 'dropbtn'
             .dropdown-content.mini
-              %a{:href => "#"} 編集する
+              = link_to '編集する', edit_photo_path(photo)
       - if photo.images.first && photo.images.second && photo.images.third
         .photo_image_three
           .photo_image_three_first
