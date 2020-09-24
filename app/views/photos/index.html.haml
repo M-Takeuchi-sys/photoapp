@@ -9,6 +9,11 @@
         %div
           %p= current_user.account
           %p= photo.display_created_at
+        .photo_detail_actions
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              %a{:href => "#"} 編集する
       - if photo.images.first && photo.images.second && photo.images.third
         .photo_image_three
           .photo_image_three_first
