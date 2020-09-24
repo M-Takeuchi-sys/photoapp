@@ -21,6 +21,16 @@ class PhotosController < ApplicationController
     @photo = current_user.photos.find(params[:id])
   end
 
+  def update
+    @photo = current_user.photos.find(params[:id])
+    if @photo.update(photo_params)
+      redirect_to root_path(@photo), notice: '更新出来ました'
+    else
+      flash.now[:error] = '更新出来ませんでした'
+      render :edit
+    end
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:content, images: [])

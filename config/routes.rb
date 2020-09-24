@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'photos#index'
 
-  resources :photos, only: [:new, :create, :edit]
+  resources :photos, only: [:new, :create, :edit, :update]
 
-  resource :profile, only: [:show, :update]
+  resource :profile, only: [:show, :edit, :update]
 end
