@@ -9,15 +9,21 @@ $icon_size: 16px;
 
   &_detail {
     padding-bottom: 11px;
-    cursor: pointer;
     display: flex;
     font-size: 10px;
+    position: relative;
 
     img {
+      cursor: pointer;
       width: $avatar-size;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 8px;
+    }
+
+    &_actions {
+      right: 0px;
+      position: absolute;
     }
   }
 

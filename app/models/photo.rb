@@ -1,9 +1,8 @@
 class Photo < ApplicationRecord
   has_many_attached :images
+  belongs_to :user
 
   validates :content, presence: true
-
-  belongs_to :user
 
   validate :images_presence
 
