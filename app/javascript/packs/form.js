@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#submitBtn').trigger("click");
   })
 
-  $('#imageInputBtn').on('click', () => {
-    $('#imagesBtn').trigger("click");
-  })
-
   $("#imagesBtn").on("change", function (e) {
     var files = e.target.files;
     var d = new $.Deferred().resolve();
@@ -32,4 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.readAsDataURL(imageFile);
     return def.promise();
   };
+
+  $('#imageInputBtn').on('click', () => {
+    $('#imagesBtn').trigger("click");
+  })
 })

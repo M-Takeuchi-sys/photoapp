@@ -26,8 +26,7 @@
     .images_preview#imagesPreview
       - if @photo.images.attached?
         - @photo.images.each do |image|
-          .photo_images
-            = image_tag image
+          = image_tag image
     = f.submit '保存', class: 'display_none', id: 'submitBtn'
 
 = javascript_pack_tag 'form'
