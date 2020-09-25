@@ -31,6 +31,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    photo = current_user.photos.find(params[:id])
+    photo.destroy!
+    redirect_to root_path, notice: '削除に成功しました'
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:content, images: [])
