@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(
+    params.fetch(:profile, {}).permit( #prlfileパラメータがない時は {} がデフォルト値
       :avatar
     )
   end
