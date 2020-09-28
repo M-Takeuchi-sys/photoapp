@@ -36,11 +36,14 @@
             = image_tag photo.images.first
       .photo_icon
         .photo_icon_heart
-          = image_tag 'heart.jpg'
+          = image_tag 'heart.png'
+          %span 23
         .photo_icon_comment
-          = image_tag 'comment.jpg'
-        .photo_icon_share
-          = image_tag 'share.jpg'
+          = image_tag 'comment.png'
+          %span 23
+        = link_to "https://twitter.com/share?url=#{ request.url }&text=PhotoAppに写真を投稿しました。", target: '_blank' do
+          .photo_icon_share
+            = image_tag 'share.png'
       .photo_content
         .photo_title
           %p= photo.content
