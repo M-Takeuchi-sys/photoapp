@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :photos, only: [:new, :create, :edit, :update, :destroy]
 
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :update]
 end
