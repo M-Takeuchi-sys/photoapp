@@ -9,12 +9,13 @@
         %div
           %p= photo.user.account
           %p= photo.display_created_at
-        .photo_detail_actions
-          .dropdown
-            = image_tag 'actions.svg', class: 'dropbtn'
-            .dropdown-content.mini
-              = link_to 'Edit', edit_photo_path(photo)
-              = link_to 'Delete', photo_path(photo), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        - if user_signed_in?
+          .photo_detail_actions
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropbtn'
+              .dropdown-content.mini
+                = link_to 'Edit', edit_photo_path(photo)
+                = link_to 'Delete', photo_path(photo), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
       - if photo.images.first && photo.images.second && photo.images.third
         .photo_image_three
           .photo_image_three_first
