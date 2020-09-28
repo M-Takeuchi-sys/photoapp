@@ -9,14 +9,14 @@
         %div
           %p= photo.user.account
           %p= photo.display_created_at
-        - if user_signed_in?
+        - if user_signed_in? && current_user.has_written?(photo) #ログインして尚且つ自分の写真か
           .photo_detail_actions
             .dropdown
               = image_tag 'actions.svg', class: 'dropbtn'
               .dropdown-content.mini
                 = link_to 'Edit', edit_photo_path(photo)
                 = link_to 'Delete', photo_path(photo), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-      - if photo.images.first && photo.images.second && photo.images.third
+      - if photo.images.first && photo.images.second && photo.images.third #写真枚数で表示変更
         .photo_image_three
           .photo_image_three_first
             = image_tag photo.images.first

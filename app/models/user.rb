@@ -21,4 +21,8 @@ class User < ApplicationRecord
       'default-avatar.png'
     end
   end
+
+  def has_written?(photo) #自分が投稿した写真かどうか
+    photos.exists?(id: photo.id)
+  end
 end
