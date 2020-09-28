@@ -9,7 +9,6 @@
   = form_with(model: @profile, url: profile_path, method: 'put', local: true, scope: :profile) do |f|
     %div{:hidden => ""}
       = f.file_field :avatar, id: 'file_field'
-
     = f.submit 'Seve', class: 'btn-primary_min'
 
   .profilePage_value

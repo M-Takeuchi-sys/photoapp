@@ -5,10 +5,6 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
   end
 
-  def edit
-    @profile = current_user.prepare_profile
-  end
-
   def update
     @profile = current_user.prepare_profile
     @profile.assign_attributes(profile_params)
@@ -22,7 +18,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(
+    params.fetch(:profile, {}).permit( #prlfileパラメータがない時は {} がデフォルト値
       :avatar
     )
   end
