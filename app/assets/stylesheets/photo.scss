@@ -2,7 +2,7 @@
 
 $heart-size: 16px;
 $avatar-size: 30px;
-$icon_size: 16px;
+$icon-size: 16px;
 
 .photo {
   margin: 32px 0;
@@ -104,26 +104,41 @@ $icon_size: 16px;
     padding-bottom: 9px;
 
     &_heart {
+      display: flex;
       padding-right: 14px;
 
       img {
         cursor: pointer;
-        width: $icon_size;
-        height: $icon_size;
+        width: $icon-size;
+        height: $icon-size;
+      }
+
+      span {
+        margin-left: 8px;
+        font-size: 12px;
+        line-height: $icon-size;
       }
     }
 
     &_comment {
       padding-right: 14px;
+      display: flex;
 
       img {
         cursor: pointer;
         width: 18px;
         height: $icon_size;
       }
+
+      span {
+        margin-left: 8px;
+        font-size: 12px;
+        line-height: $icon-size;
+      }
     }
 
     &_share {
+      display: flex;
 
       img{
         cursor: pointer;
