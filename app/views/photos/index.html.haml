@@ -3,7 +3,7 @@
     .float_btn
       %i.fa.fa-camera.fa-2x
   - @photos.each do |photo|
-    .photo
+    .photo#photo-id{data: {photo_id: photo.id}}
       .photo_detail
         = image_tag photo.user.avatar_image
         %div
@@ -55,3 +55,5 @@
       .photo_content
         .photo_title
           %p= photo.content
+
+= javascript_pack_tag 'photo'

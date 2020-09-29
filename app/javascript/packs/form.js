@@ -4,7 +4,7 @@ import axios from 'axios'
 document.addEventListener('DOMContentLoaded', () => {
   $('#formHeaderPost').on('click', () => {
     $('#submitBtn').trigger("click");
-  })
+  });
 
   $("#imagesBtn").on("change", function (e) {
     var files = e.target.files;
@@ -31,5 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('#imageInputBtn').on('click', () => {
     $('#imagesBtn').trigger("click");
-  })
-})
+  });
+});

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'photos#index'
 
   resources :photos do
-    resource :like, only: [:create, :destroy]
+    resource :like, only: [:show, :create, :destroy]
   end
 
   resource :profile, only: [:show, :update]
