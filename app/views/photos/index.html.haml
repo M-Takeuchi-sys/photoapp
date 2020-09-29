@@ -35,9 +35,17 @@
           .photo_image_one_first
             = image_tag photo.images.first
       .photo_icon
-        .photo_icon_heart
-          = image_tag 'heart.png'
-          %span 23
+        - if user_signed_in?
+          -if current_user.has_liked?(photo)
+            .photo_icon_heart
+              = link_to photo_like_path(photo), data: { method: 'delete' } do
+                = image_tag 'heart-active.png'
+              %span= photo.like_count
+          -else
+            .photo_icon_heart
+              = link_to photo_like_path(photo), data: { method: 'post' } do
+                = image_tag 'heart.png'
+              %span= photo.like_count
         .photo_icon_comment
           = image_tag 'comment.png'
           %span 23
