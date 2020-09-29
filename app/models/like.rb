@@ -1,21 +1,19 @@
 # == Schema Information
 #
-# Table name: photos
+# Table name: likes
 #
 #  id         :bigint           not null, primary key
-#  content    :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  photo_id   :bigint           not null
 #  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_photos_on_user_id  (user_id)
+#  index_likes_on_photo_id  (photo_id)
+#  index_likes_on_user_id   (user_id)
 #
-require 'test_helper'
-
-class PhotoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Like < ApplicationRecord
+  belongs_to :user
+  belongs_to :photo
 end
