@@ -45,4 +45,8 @@ class User < ApplicationRecord
   def has_written?(photo) #自分が投稿した写真かどうか
     photos.exists?(id: photo.id)
   end
+
+  def has_liked?(photo)
+    likes.exists?(photo_id: photo.id)
+  end
 end

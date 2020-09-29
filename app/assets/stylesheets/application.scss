@@ -33,6 +33,11 @@ body {
   font-style: $base-font-style;
 }
 
+a {
+  text-decoration: none;
+  color: $text-base-color;
+}
+
 .main {
   padding-top: 80px;
 }
