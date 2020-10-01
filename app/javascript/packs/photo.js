@@ -6,9 +6,9 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 const handleHeartDisplay = (hasLiked) => {
   if (hasLiked) {
-    $('.active-heart').removeClass('hidden')
+    $('.photo-active-heart').children().removeClass('hidden')
   } else {
-    $('.inactive-heart').removeClass('hidden')
+    $('.photo-inactive-heart').children().removeClass('hidden')
   }
 }
 
@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
       handleHeartDisplay(hasLiked)
     })
 
-  $('.inactive-heart').on('click', () => {
+  $('.photo-inactive-heart').children().on('click', () => {
     axios.post(`/photos/${photoId}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
-          $('.active-heart').removeClass('hidden')
-          $('.inactive-heart').addClass('hidden')
+          $('.photo-active-heart').children().removeClass('hidden')
+          $('.photo-inactive-heart').children().addClass('hidden')
         }
       })
       .catch((e) => {
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
-  $('.active-heart').on('click', () => {
+  $('.photo-active-heart').children().on('click', () => {
     axios.delete(`/photos/${photoId}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
-          $('.active-heart').addClass('hidden')
-          $('.inactive-heart').removeClass('hidden')
+          $('.photo-active-heart').children().addClass('hidden')
+          $('.photo-inactive-heart').children().removeClass('hidden')
         }
       })
       .catch((e) => {
