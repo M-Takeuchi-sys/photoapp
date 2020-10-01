@@ -47,6 +47,6 @@ class User < ApplicationRecord
   end
 
   def has_liked?(photo)
-    likes.where(photo_id: photo.id).exists?
+    likes.exists?(photo_id: photo.id)
   end
 end
