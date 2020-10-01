@@ -36,14 +36,12 @@
             = image_tag photo.images.first
       .photo_icon
         - if user_signed_in?
-          .photo-active-heart
-            .photo_icon_heart.hidden.active-heart{data: {photo_id: photo.id}}
-              = image_tag 'heart-active.png'
-              %span= photo.like_count
-          .photo-inactive-heart
-            .photo_icon_heart.hidden.inactive-heart{data: {photo_id: photo.id}}
-              = image_tag 'heart.png'
-              %span= photo.like_count
+          .photo_icon_heart.hidden{class: ".active-heart#{photo.id}"}
+            = image_tag 'heart-active.png'
+            %span= photo.like_count
+          .photo_icon_heart.hidden{class: ".inactive-heart#{photo.id}"}
+            = image_tag 'heart.png'
+            %span= photo.like_count
         .photo_icon_comment
           = image_tag 'comment.png'
           %span 23

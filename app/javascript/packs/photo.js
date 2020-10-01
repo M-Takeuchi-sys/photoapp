@@ -4,29 +4,31 @@ import { csrfToken } from 'rails-ujs'
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
+const dataset = $('#photo-id').data()
+const photoId = dataset.photoId
+
 const handleHeartDisplay = (hasLiked) => {
   if (hasLiked) {
-    $('.photo-active-heart').children().removeClass('hidden')
+    $(`.active-heart${photoId}`).children().removeClass('hidden')
   } else {
-    $('.photo-inactive-heart').children().removeClass('hidden')
+    $(`.inactive-heart${photoId}`).children().removeClass('hidden')
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const dataset = $('#photo-id').data()
-  const photoId = dataset.photoId
+
   axios.get(`/photos/${photoId}/like`)
     .then((response) => {
       const hasLiked = response.data.hasLiked
       handleHeartDisplay(hasLiked)
     })
 
-  $('.photo-inactive-heart').children().on('click', () => {
+  $(`.inactive-heart${photoId}`).children().on('click', () => {
     axios.post(`/photos/${photoId}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
-          $('.photo-active-heart').children().removeClass('hidden')
-          $('.photo-inactive-heart').children().addClass('hidden')
+          $(`.active-heart${photoId}`).children().removeClass('hidden')
+          $(`.inactive-heart${photoId}`).children().addClass('hidden')
         }
       })
       .catch((e) => {
@@ -35,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
-  $('.photo-active-heart').children().on('click', () => {
+  $(`.active-heart${photoId}`).children().on('click', () => {
     axios.delete(`/photos/${photoId}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
-          $('.photo-active-heart').children().addClass('hidden')
-          $('.photo-inactive-heart').children().removeClass('hidden')
+          $(`.active-heart${photoId}`).children().addClass('hidden')
+          $(`.inactive-heart${photoId}`).children().removeClass('hidden')
         }
       })
       .catch((e) => {
