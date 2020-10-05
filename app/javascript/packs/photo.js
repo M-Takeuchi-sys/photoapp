@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
     
-  $('body').on('click', '.active-heart' + photoIdStr, () => {
+  $('.heartBtn').on('click', () => {
     axios.post(`/photos/${photoId}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
   })
 
-  $('body').on('click', '.inactive-heart' + photoIdStr, () => {
+  $('.heartBtn').on('click', () => {
     axios.delete(`/photos/${photoId}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
