@@ -7,43 +7,46 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#photo-id').data()
   const photoId = dataset.photoId
-  const photoIdStr = String(photoId)
  
-  axios.get(`/photos/${photoId}/like`)
-    .then((response) => {
-      const hasLiked = response.data.hasLiked
-      if (hasLiked) {
-        $('.active-heart' + photoIdStr).removeClass('hidden')
-      } else {
-        $('.inactive-heart' + photoIdStr).removeClass('hidden')
-      }
-    })
+  // axios.get(`/photos/${photoId}/like`)
+  //   .then((response) => {
+  //     const hasLiked = response.data.hasLiked
+  //     if (hasLiked) {
+  //       $('.active-heart').removeClass('hidden')
+  //     } else {
+  //       $('.inactive-heart').removeClass('hidden')
+  //     }
+  //   })
     
-  $('.heartBtn').on('click', () => {
-    axios.post(`/photos/${photoId}/like`)
-      .then((response) => {
-        if (response.data.status === 'ok') {
-          $('.active-heart' + photoIdStr).removeClass('hidden')
-          $('.inactive-heart' + photoIdStr).addClass('hidden')
-        }
-      })
-      .catch((e) => {
-        window.alert('Error')
-        console.log(e)
-      })
+  $('.inactive-heart').on('click', () => {
+    var id = $('.heart-btn').attr('id')
+    console.log(id);
+    // axios.post(`/photos/${photoId}/like`)
+    //   .then((response) => {
+    //     if (response.data.status === 'ok') {
+    //       $('.active-heart').removeClass('hidden')
+    //       $('.inactive-heart').addClass('hidden')
+    //     }
+    //   })
+    //   .catch((e) => {
+    //     window.alert('Error')
+    //     console.log(e)
+    //   })
   })
 
-  $('.heartBtn').on('click', () => {
-    axios.delete(`/photos/${photoId}/like`)
-      .then((response) => {
-        if (response.data.status === 'ok') {
-          $('.active-heart' + photoIdStr).addClass('hidden')
-          $('.inactive-heart' + photoIdStr).removeClass('hidden')
-        }
-      })
-      .catch((e) => {
-        window.alert('Error')
-        console.log(e)
-      })
+  $('.active-heart').on('click', () => {
+    var id = $('.heart-btn').attr('id')
+    console.log(id);
+    // axios.delete(`/photos/${photoId}/like`)
+    //   .then((response) => {
+    //     if (response.data.status === 'ok') {
+    //       $('.active-heart').addClass('hidden')
+    //       $('.inactive-heart').removeClass('hidden')
+    //     }
+    //   })
+    //   .catch((e) => {
+    //     window.alert('Error')
+    //     console.log(e)
+    //   })
   })
 })
