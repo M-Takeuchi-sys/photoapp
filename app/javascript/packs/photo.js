@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //     }
   //   })
 
-  $('.inactive-heart').on('click', () => {
-    var id = $(this).attr('id');
+  $('.inactive-heart').on('click', (e) => {
+    e.preventDefault();
+    var id = $(e.currentTarget).attr('id')
     console.log(id);
     // axios.post(`/photos/${photoId}/like`)
     //   .then((response) => {
@@ -35,8 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //   })
   })
 
-  $('.active-heart').on('click', () => {
-    var id = $(this).attr('id');
+  $('.active-heart').on('click', (e) => {
+    e.preventDefault();
+    var id = $(e.currentTarget).attr('id')
     console.log(id);
     // axios.delete(`/photos/${photoId}/like`)
     //   .then((response) => {
