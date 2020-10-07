@@ -7,6 +7,7 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#photo-id').data()
   const photoId = dataset.photoId
+
  
   // axios.get(`/photos/${photoId}/like`)
   //   .then((response) => {
@@ -17,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //       $('.inactive-heart').removeClass('hidden')
   //     }
   //   })
-    
+
   $('.inactive-heart').on('click', () => {
-    var id = $('.heart-btn').attr('id')
+    var id = $(this).attr('id');
     console.log(id);
     // axios.post(`/photos/${photoId}/like`)
     //   .then((response) => {
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   $('.active-heart').on('click', () => {
-    var id = $('.heart-btn').attr('id')
+    var id = $(this).attr('id');
     console.log(id);
     // axios.delete(`/photos/${photoId}/like`)
     //   .then((response) => {
