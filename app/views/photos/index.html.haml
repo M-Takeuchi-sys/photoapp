@@ -36,10 +36,10 @@
             = image_tag photo.images.first
       .photo_icon
         - if user_signed_in?
-          .photo_icon_heart.heart-btn.active-heart#photo-id{data: {photo_id: photo.id}}
+          .photo_icon_heart.heart-btn.active-heart{id: "#{photo.id}"}
             = image_tag 'heart-active.png'
             %span= photo.like_count
-          .photo_icon_heart.heart-btn.inactive-heart#photo-id{data: {photo_id: photo.id}}
+          .photo_icon_heart.heart-btn.inactive-heart{id: "#{photo.id}"}
             = image_tag 'heart.png'
             %span= photo.like_count
         .photo_icon_comment
