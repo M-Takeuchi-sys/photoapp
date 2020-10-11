@@ -37,14 +37,14 @@
       .photo_icon
         - if user_signed_in?
           - if current_user.has_liked?(photo)
-            .photo_icon_heart.heart-btn.active-heart{id: "#{photo.id}"}
+            .photo_icon_heart.heart-btn.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
-            .photo_icon_heart.hidden.heart-btn.inactive-heart{id: "#{photo.id}"}
+            .photo_icon_heart.hidden.heart-btn.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
           - else
-            .photo_icon_heart.heart-btn.inactive-heart{id: "#{photo.id}"}
+            .photo_icon_heart.heart-btn.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
-            .photo_icon_heart.hidden.heart-btn.active-heart{id: "#{photo.id}"}
+            .photo_icon_heart.hidden.heart-btn.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
         %span= photo.like_count
         .photo_icon_comment

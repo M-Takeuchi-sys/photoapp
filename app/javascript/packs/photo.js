@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((response) => {
         console.log(response)
         if (response.data.status === 'ok') {
-          $('.active-heart').removeClass('hidden')
-          $(`#${id}`).addClass('hidden')
+          $(`.active-heart.${id}`).removeClass('hidden')
+          $(`.inactive-heart#${id}`).addClass('hidden')
         }
       })
       .catch((e) => {
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((response) => {
         console.log(response)
         if (response.data.status === 'ok') {
-          $(`#${id}`).addClass('hidden')
-          $('.inactive-heart').removeClass('hidden')
+          $(`.active-heart#${id}`).addClass('hidden')
+          $(`.inactive-heart.${id}`).removeClass('hidden')
         }
       })
       .catch((e) => {
