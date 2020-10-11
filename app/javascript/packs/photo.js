@@ -5,8 +5,9 @@ import { csrfToken } from 'rails-ujs'
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 document.addEventListener('DOMContentLoaded', () => {
-  // var dataset = $('#photo-id').data()
-  // var photoId = dataset.photoId
+  // const dataset = $('#photo-id').data()
+  // const photoId = dataset.photoId
+  // console.log(photoId)
 
   // $('.heart-btn').on('click', function() {
   //   var id = $(this).attr('photo-id')
@@ -40,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((response) => {
         console.log(response)
         if (response.data.status === 'ok') {
-          $('.active-heart, #id').removeClass('hidden')
-          $('.inactive-heart, #id').addClass('hidden')
+          $('.active-heart').removeClass('hidden')
+          $(`#${id}`).addClass('hidden')
         }
       })
       .catch((e) => {
@@ -58,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((response) => {
         console.log(response)
         if (response.data.status === 'ok') {
-          $('.active-heart, #id').addClass('hidden')
-          $('.inactive-heart, #id').removeClass('hidden')
+          $(`#${id}`).addClass('hidden')
+          $('.inactive-heart').removeClass('hidden')
         }
       })
       .catch((e) => {

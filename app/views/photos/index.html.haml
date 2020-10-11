@@ -3,7 +3,7 @@
     .float_btn
       %i.fa.fa-camera.fa-2x
   - @photos.each do |photo|
-    .photo
+    .photo#photo-id{data: {phhoto_: photo.id}}
       .photo_detail
         = image_tag photo.user.avatar_image
         %div
@@ -36,15 +36,20 @@
             = image_tag photo.images.first
       .photo_icon
         - if user_signed_in?
-          .photo_icon_heart.heart-btn.active-heart{id: "#{photo.id}"}
-            = image_tag 'heart-active.png'
-            %span= photo.like_count
-          .photo_icon_heart.heart-btn.inactive-heart{id: "#{photo.id}"}
-            = image_tag 'heart.png'
-            %span= photo.like_count
+          - if current_user.has_liked?(photo)
+            .photo_icon_heart.heart-btn.active-heart{id: "#{photo.id}"}
+              = image_tag 'heart-active.png'
+            .photo_icon_heart.hidden.heart-btn.inactive-heart{id: "#{photo.id}"}
+              = image_tag 'heart.png'
+          - else
+            .photo_icon_heart.heart-btn.inactive-heart{id: "#{photo.id}"}
+              = image_tag 'heart.png'
+            .photo_icon_heart.hidden.heart-btn.active-heart{id: "#{photo.id}"}
+              = image_tag 'heart-active.png'
+        %span= photo.like_count
         .photo_icon_comment
           = image_tag 'comment.png'
-          %span 23
+        %span 23
         = link_to "https://twitter.com/share?url=#{ request.url }&text=PhotoAppに写真を投稿しました。", target: '_blank' do
           .photo_icon_share
             = image_tag 'share.png'
