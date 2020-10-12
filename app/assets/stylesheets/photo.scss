@@ -64,6 +64,7 @@ $icon-size: 16px;
     display: grid;
     gap: 8px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px;
 
     &_first {
       grid-column: 1 / 2;
