@@ -39,17 +39,21 @@
           - if current_user.has_liked?(photo)
             .photo_icon_heart.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
-              %span= photo.like_count
+              .like_count{class: "#{photo.id}"}
+                %span= photo.like_count
             .photo_icon_heart.hidden.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
-              %span= photo.like_count
+              .like_count{class: "#{photo.id}"}
+                %span= photo.like_count
           - else
             .photo_icon_heart.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
-              %span= photo.like_count
+              .like_count{class: "#{photo.id}"}
+                %span= photo.like_count
             .photo_icon_heart.hidden.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
-              %span= photo.like_count
+              .like_count{class: "#{photo.id}"}
+                %span= photo.like_count
         .photo_icon_comment
           = image_tag 'comment.png'
           %span 23

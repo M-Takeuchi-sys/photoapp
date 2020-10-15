@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.data.status === 'ok') {
           $(`.active-heart.${id}`).removeClass('hidden')
           $(`.inactive-heart.${id}`).addClass('hidden')
+          var likeCount = $(`.like_count.${id}`).text()
+          $(`.like_count.${id}`).off()
+          var numLikeCount = parseInt(likeCount)
+          console.log(numLikeCount + 1)
+          $(`.like_count.${id}`).text(numLikeCount + 1)
         }
       })
       .catch((e) => {
@@ -30,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.data.status === 'ok') {
           $(`.active-heart.${id}`).addClass('hidden')
           $(`.inactive-heart.${id}`).removeClass('hidden')
+          var likeCount = $(`.like_count.${id}`).text();
+          $(`.like_count.${id}`).off()
+          var numLikeCount = parseInt(likeCount)
+          console.log(numLikeCount - 1)
+          $(`.like_count.${id}`).text(numLikeCount - 1);
         }
       })
       .catch((e) => {
