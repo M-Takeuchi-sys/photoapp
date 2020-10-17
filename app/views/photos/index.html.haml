@@ -40,23 +40,24 @@
             .photo_icon_heart.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
               .like_count{class: "#{photo.id}"}
-                %span= photo.like_count
+                %p= photo.like_count
             .photo_icon_heart.hidden.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
               .like_count{class: "#{photo.id}"}
-                %span= photo.like_count
+                %p= photo.like_count
           - else
             .photo_icon_heart.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
               .like_count{class: "#{photo.id}"}
-                %span= photo.like_count
+                %p= photo.like_count
             .photo_icon_heart.hidden.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
               .like_count{class: "#{photo.id}"}
-                %span= photo.like_count
+                %p= photo.like_count
         .photo_icon_comment
           = image_tag 'comment.png'
-          %span 23
+          .comment_count
+            %p 23
         = link_to "https://twitter.com/share?url=#{ request.url }&text=PhotoAppに写真を投稿しました。", target: '_blank' do
           .photo_icon_share
             = image_tag 'share.png'
