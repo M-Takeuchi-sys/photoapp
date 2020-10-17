@@ -50,6 +50,7 @@ a {
 
 .float_btn {
   position: fixed;
+  z-index: 2;
   top: 50px;
   left: 25px;
   width: 45px;
@@ -63,4 +64,8 @@ a {
   i {
     margin-top: 5px;
   }
+}
+
+.hidden {
+  display: none;
 }
