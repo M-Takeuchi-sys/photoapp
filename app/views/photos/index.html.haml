@@ -48,7 +48,7 @@
               = image_tag 'heart-active.png'
           .like_count{class: "#{photo.id}"}
             %p= photo.like_count
-        = link_to photo_comments_path(photo) do
+        = link_to photo_path(photo) do
           .photo_icon_comment
             = image_tag 'comment.png'
         .comment_count
