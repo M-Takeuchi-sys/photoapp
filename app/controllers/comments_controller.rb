@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
   end
 
@@ -9,7 +11,7 @@ class CommentsController < ApplicationController
 
   def create
     photo = Photo.find(params[:photo_id])
-    @comment = photo.comments.build(comment_params)
+    @comment = photo.comments.build(comment_params.merge!(user_id: current_user.id))
     if @comment.save
       redirect_to photo_path(photo), notice: 'コメントを追加'
     else
