@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    photo = Photo.find(params[:photo_id])
+    comments = photo.comments
+    render json: comments
   end
 
   def new
