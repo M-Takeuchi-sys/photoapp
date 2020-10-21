@@ -1,0 +1,40 @@
+@import './variables';
+
+.comment {
+  padding-bottom: 30px;
+  h2 {
+    text-align: center;
+    color: #333A42;
+  }
+
+  &_detail {
+    padding-bottom: 11px;
+    display: flex;
+    font-size: 10px;
+    position: relative;
+    padding-bottom: 32px;
+
+    img {
+      cursor: pointer;
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+      margin-top: 14px;
+      margin-right: 14px;
+    }
+  }
+
+  &_wrap {
+
+    &_name {
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+
+    &_content {
+      font-size: 14px;
+      line-height: 20px;
+      color: #9B9B9B;
+    }
+  }
+}

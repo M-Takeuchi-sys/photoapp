@@ -52,7 +52,7 @@
           .photo_icon_comment
             = image_tag 'comment.png'
         .comment_count
-          %p 23
+          %p= photo.comment_count
         - if user_signed_in?
           = link_to "https://twitter.com/share?url=#{ request.url }&text=PhotoAppに写真を投稿しました。", target: '_blank' do
             .photo_icon_share
