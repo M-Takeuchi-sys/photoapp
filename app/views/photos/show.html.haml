@@ -1,0 +1,14 @@
+.container
+  .comment
+    %h2 Comment
+  - @comments.each do |comment|
+    .comment_detail
+      = image_tag comment.user.avatar_image
+      .comment_wrap
+        .comment_wrap_name
+          %p= comment.user.account
+        .comment_wrap_content
+          %p= comment.content
+  = link_to new_photo_comment_path(@photo) do
+    .btn-secondary
+      = image_tag 'comment.png'

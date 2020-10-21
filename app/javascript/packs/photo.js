@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.data.status === 'ok') {
           $(`.active-heart.${id}`).removeClass('hidden')
           $(`.inactive-heart.${id}`).addClass('hidden')
-          const likeCount = $(e.currentTarget).text()
+          const likeCount = $(`.like_count.${id}`).text()
           const numLikeCount = parseInt(likeCount)
           $(`.like_count.${id}`).text(numLikeCount + 1)
         }
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.data.status === 'ok') {
           $(`.active-heart.${id}`).addClass('hidden')
           $(`.inactive-heart.${id}`).removeClass('hidden')
-          const likeCount = $(e.currentTarget).text();
+          const likeCount = $(`.like_count.${id}`).text();
           const numLikeCount = parseInt(likeCount)
           $(`.like_count.${id}`).text(numLikeCount - 1)
         }

@@ -28,10 +28,12 @@
 
 .btn-secondary {
   background-color: white;
-  border: solid 1px $primary-color;
-  width: 100%;
-  text-align: center;
+  width: 90%;
   color: $primary-color;
-  padding: 16px 0;
-  font-weight: bold;
+  padding: 12px 0 12px 21px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right: 5%;
+  bottom: 20px;
+  left: 5%;
 }

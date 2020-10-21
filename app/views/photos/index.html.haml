@@ -39,28 +39,24 @@
           - if current_user.has_liked?(photo)
             .photo_icon_heart.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
-              .like_count{class: "#{photo.id}"}
-                %p= photo.like_count
             .photo_icon_heart.hidden.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
-              .like_count{class: "#{photo.id}"}
-                %p= photo.like_count
           - else
             .photo_icon_heart.inactive-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart.png'
-              .like_count{class: "#{photo.id}"}
-                %p= photo.like_count
             .photo_icon_heart.hidden.active-heart{class: "#{photo.id}", id: "#{photo.id}"}
               = image_tag 'heart-active.png'
-              .like_count{class: "#{photo.id}"}
-                %p= photo.like_count
-        .photo_icon_comment
-          = image_tag 'comment.png'
-          .comment_count
-            %p 23
-        = link_to "https://twitter.com/share?url=#{ request.url }&text=PhotoAppに写真を投稿しました。", target: '_blank' do
-          .photo_icon_share
-            = image_tag 'share.png'
+          .like_count{class: "#{photo.id}"}
+            %p= photo.like_count
+        = link_to photo_path(photo) do
+          .photo_icon_comment
+            = image_tag 'comment.png'
+        .comment_count
+          %p= photo.comment_count
+        - if user_signed_in?
+          = link_to "https://twitter.com/share?url=#{ request.url }&text=PhotoAppに写真を投稿しました。", target: '_blank' do
+            .photo_icon_share
+              = image_tag 'share.png'
       .photo_content
         .photo_title
           %p= photo.content

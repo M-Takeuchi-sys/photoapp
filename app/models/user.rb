@@ -29,6 +29,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :photos, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def prepare_profile
     profile || build_profile

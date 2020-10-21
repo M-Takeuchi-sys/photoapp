@@ -18,6 +18,7 @@ class Photo < ApplicationRecord
   validate :images_presence
 
   has_many_attached :images
+  has_many :comments, dependent: :destroy
   belongs_to :user
   has_many :likes, dependent: :destroy
 
@@ -38,4 +39,9 @@ class Photo < ApplicationRecord
   def like_count
     likes.count
   end
+
+  def comment_count
+    comments.count
+  end
+  
 end
