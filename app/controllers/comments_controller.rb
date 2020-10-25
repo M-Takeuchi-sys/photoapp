@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def index
     photo = Photo.find(params[:photo_id])
     comments = photo.comments
-    render json: comments
+    render json: comments, include: { user: [ :profile] }
   end
 
   def new
