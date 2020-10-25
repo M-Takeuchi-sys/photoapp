@@ -1,14 +1,12 @@
 .container
-  .comment
+  .comment#photo-show{data: {photo_id: @photo.id}}
     %h2 Comment
-  - @comments.each do |comment|
-    .comment_detail
-      = image_tag comment.user.avatar_image
-      .comment_wrap
-        .comment_wrap_name
-          %p= comment.user.account
-        .comment_wrap_content
-          %p= comment.content
-  = link_to new_photo_comment_path(@photo) do
-    .btn-secondary
+  .comments-container
+  .btn-secondary.show-comment-form
+    = image_tag 'comment.png'
+  .comment-text-area.hidden
+    = text_area_tag :comment_content, ''
+    .btn-secondary.add-comment-button
       = image_tag 'comment.png'
+
+= javascript_pack_tag 'comment'
