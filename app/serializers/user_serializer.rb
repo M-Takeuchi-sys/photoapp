@@ -1,7 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :avatar_comment_image
+  attributes :id, :account, :avatar_comment_image
   has_many :comments
   has_one :profile
 
