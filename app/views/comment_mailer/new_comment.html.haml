@@ -1,0 +1,4 @@
+%p #{@photo_user.account} さん
+%p 投稿した写真,#{@photo.content}にコメントされました。
+
+= link_to 'コメントを確認する', photo_url(@photo)
