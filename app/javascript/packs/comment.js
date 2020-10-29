@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
       comments.forEach((comment) => {
         $('.comments-container').append(
           `<div class="comment_detail">
-            <img src="${comment.user.avatar_comment_image}">
+            <a href="/accounts/${comment.user.id}">
+              <img src="${comment.user.avatar_comment_image}">
+            </a>
             <div class="comment_wrap">
               <div class="comment_wrap_name">
                 <p>${comment.user.account}</p>
