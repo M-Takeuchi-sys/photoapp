@@ -1,0 +1,40 @@
+.container
+  .profilePage
+    .profilePage_account
+      = user.account
+    - if user == @user
+      .profilePage_followbtn
+        = link_to 'Follow', '#'
+  .profilePage_user
+    .profilePage_user_image#image_preview
+      = image_tag user.avatar_image
+
+  - if user == current_user  
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true, scope: :profile) do |f|
+      %div{:hidden => ""}
+        = f.file_field :avatar, id: 'file_field'
+      = f.submit 'Seve', class: 'btn-primary_min'
+
+  .profilePage_value
+    .profilePage_value_posts
+      .profilePage_value_posts_count
+        %p 44
+      .profilePage_value_posts_text
+        %p Posts
+    .profilePage_value_followers
+      .profilePage_value_followers_count
+        %p 110
+      .profilePage_value_followers_text
+        %p Followers
+    .profilePage_value_following
+      .profilePage_value_following_count
+        %p 44
+      .profilePage_value_following_text
+        %p Following
+  .profilePage_photo
+    .profilePage_photo_one
+      = image_tag 'photo1.png'
+    .profilePage_photo_two
+      = image_tag 'photo2.png'
+    .profilePage_photo_three
+      = image_tag 'photo3.png'
