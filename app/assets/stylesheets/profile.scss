@@ -16,10 +16,20 @@ $image_size: 76px;
 
   &_followbtn {
     position: absolute;
-    right: 0;
+    right: 0; 
 
-    a {
-    color: #BDBDBD;
+    &_following {
+      
+      a {
+        color: #333A42;
+      }
+    }
+
+    &_follow {
+
+      a {
+      color: #BDBDBD;
+      }
     }
   }
 
