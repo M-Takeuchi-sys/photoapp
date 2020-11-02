@@ -6,11 +6,31 @@ $image_size: 76px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding-bottom: 32px;
 
 
   &_account {
-    padding-bottom: 32px;
     color: #333A42;
+  }
+
+  &_followbtn {
+    position: absolute;
+    right: 0; 
+
+    &_following {
+      
+      a {
+        color: #333A42;
+      }
+    }
+
+    &_follow {
+
+      a {
+      color: #BDBDBD;
+      }
+    }
   }
 
   &_user {
