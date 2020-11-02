@@ -72,6 +72,21 @@ class User < ApplicationRecord
     likes.exists?(photo_id: photo.id)
   end
 
+  def photo_count
+    photos.count
+  end
+
+  def following_count
+    following_relationships.count
+  end
+
+  def follower_count
+    follower_relationships.count
+  end
+  
+  
+  
+
   private
   def get_user_id(user)
     if user.is_a?(User)

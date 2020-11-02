@@ -23,17 +23,17 @@
   .profilePage_value
     .profilePage_value_posts
       .profilePage_value_posts_count
-        %p 44
+        %p= user.photo_count
       .profilePage_value_posts_text
         %p Posts
     .profilePage_value_followers
       .profilePage_value_followers_count
-        %p 110
+        %p= user.follower_count
       .profilePage_value_followers_text
         %p Followers
     .profilePage_value_following
       .profilePage_value_following_count
-        %p 44
+        %p= user.following_count
       .profilePage_value_following_text
         %p Following
   .profilePage_photo
