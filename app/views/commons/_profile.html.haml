@@ -4,12 +4,10 @@
       = user.account
     - if user == @user
       .profilePage_followbtn
-        - if current_user&.has_followed?(user)
-          .profilePage_followbtn_following.hidden.following
-            = link_to 'Following', account_unfollows_path(user), data: {method: 'post'}
-        - else
-          .profilePage_followbtn_follow.hidden.follow
-            = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
+        .profilePage_followbtn_following.hidden.following
+          %p Following
+        .profilePage_followbtn_follow.hidden.follow
+          %p Follow
   .profilePage_user
     .profilePage_user_image#image_preview
       = image_tag user.avatar_image
@@ -27,7 +25,7 @@
       .profilePage_value_posts_text
         %p Posts
     .profilePage_value_followers
-      .profilePage_value_followers_count
+      .profilePage_value_followers_count#follower_count
         %p= user.follower_count
       .profilePage_value_followers_text
         %p Followers
