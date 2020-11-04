@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const userId = dataset.userId
   axios.get(`/accounts/${accountId}/follows/${userId}`)
     .then((response) => {
-      console.log(response)
+      const hasFollow = response.data.hasFollow
+      if (hasFollow) {
+        $('.following').removeClass('hidden')
+      } else {
+        $('.follow').removeClass('hidden')
+      }
     })
 })

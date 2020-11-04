@@ -5,10 +5,10 @@
     - if user == @user
       .profilePage_followbtn
         - if current_user&.has_followed?(user)
-          .profilePage_followbtn_following
+          .profilePage_followbtn_following.hidden.following
             = link_to 'Following', account_unfollows_path(user), data: {method: 'post'}
         - else
-          .profilePage_followbtn_follow
+          .profilePage_followbtn_follow.hidden.follow
             = link_to 'Follow', account_follows_path(user), data: {method: 'post'}
   .profilePage_user
     .profilePage_user_image#image_preview
