@@ -1,4 +1,8 @@
 .container
+  .follow
+    %h2 Followers
   - @followers.each do |follower|
-    = image_tag follower.avatar_image
-    = follower.account
+    .follow_detail
+      = image_tag follower.avatar_image
+      .follow_name
+        = follower.account
