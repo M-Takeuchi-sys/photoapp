@@ -1,1 +1,4 @@
-following
+.container
+  - @followings.each do |following|
+    = image_tag following.avatar_image
+    = following.account

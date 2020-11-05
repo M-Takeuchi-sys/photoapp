@@ -24,14 +24,14 @@
         %p= user.photo_count
       .profilePage_value_posts_text
         %p Posts
-    = link_to account_followings_path(@user) do
-      .profilePage_value_followers
+    .profilePage_value_followers
+      = link_to account_follows_path(user) do
         .profilePage_value_followers_count#follower_count
           %p= user.follower_count
-      .profilePage_value_followers_text
-        %p Followers
-    = link_to account_follows_path(@user) do
-      .profilePage_value_following
+        .profilePage_value_followers_text
+          %p Followers
+    .profilePage_value_following
+      = link_to account_followings_path(user) do
         .profilePage_value_following_count
           %p= user.following_count
         .profilePage_value_following_text
