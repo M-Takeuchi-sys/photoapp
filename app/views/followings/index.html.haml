@@ -2,8 +2,4 @@
   .follow
     %h2 Following
   - @followings.each do |following|
-    = link_to account_path(following.id) do
-      .follow_detail
-        = image_tag following.avatar_image
-        .follow_name
-          = following.account
+    = render 'commons/follow', follow: following
