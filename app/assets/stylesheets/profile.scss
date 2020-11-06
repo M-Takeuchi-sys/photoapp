@@ -19,15 +19,17 @@ $image_size: 76px;
     right: 0; 
 
     &_following {
+      cursor: pointer;
       
-      a {
+      p {
         color: #333A42;
       }
     }
 
     &_follow {
+      cursor: pointer;
 
-      a {
+      p {
       color: #BDBDBD;
       }
     }
@@ -77,6 +79,7 @@ $image_size: 76px;
     &_followers {
       display: inline;
       width: 75px;
+      cursor: pointer;
 
       &_count {
         text-align: center;
@@ -92,6 +95,7 @@ $image_size: 76px;
     &_following {
       display: inline;
       width: 75px;
+      cursor: pointer;
 
       &_count {
         text-align: center;

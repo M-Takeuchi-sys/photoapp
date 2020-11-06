@@ -25,15 +25,17 @@
       .profilePage_value_posts_text
         %p Posts
     .profilePage_value_followers
-      .profilePage_value_followers_count#follower_count
-        %p= user.follower_count
-      .profilePage_value_followers_text
-        %p Followers
+      = link_to account_follows_path(user) do
+        .profilePage_value_followers_count#follower_count
+          %p= user.follower_count
+        .profilePage_value_followers_text
+          %p Followers
     .profilePage_value_following
-      .profilePage_value_following_count
-        %p= user.following_count
-      .profilePage_value_following_text
-        %p Following
+      = link_to account_followings_path(user) do
+        .profilePage_value_following_count
+          %p= user.following_count
+        .profilePage_value_following_text
+          %p Following
   .profilePage_photo
     .profilePage_photo_one
       = image_tag 'photo1.png'
