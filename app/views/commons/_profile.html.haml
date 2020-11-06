@@ -36,10 +36,7 @@
           %p= user.following_count
         .profilePage_value_following_text
           %p Following
-  .profilePage_photo
-    .profilePage_photo_one
-      = image_tag 'photo1.png'
-    .profilePage_photo_two
-      = image_tag 'photo2.png'
-    .profilePage_photo_three
-      = image_tag 'photo3.png'
+  - user.photos.each do |photo|
+    = render 'commons/photo', photo: photo
+
+= javascript_pack_tag 'photo'
