@@ -12,8 +12,8 @@
           .dropdown-content.mini
             = link_to 'Edit', edit_photo_path(photo)
             = link_to 'Delete', photo_path(photo), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  =render 'commons/photoimage', photo: photo
-  =render 'commons/photoicon', photo: photo
+  = render 'commons/photoimage', photo: photo
+  = render 'commons/photoicon', photo: photo
   .photo_content
     .photo_title
       %p= photo.content

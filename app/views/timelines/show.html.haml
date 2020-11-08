@@ -1,1 +1,7 @@
-Timeline
+.container
+  = link_to new_photo_path do
+    .float_btn
+      %i.fa.fa-camera.fa-2x
+  = render 'commons/tabs'
+  - @photos.each do |photo|
+    = render 'commons/photo', photo: photo
