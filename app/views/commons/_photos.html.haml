@@ -2,6 +2,11 @@
   = link_to new_photo_path do
     .float_btn
       %i.fa.fa-camera.fa-2x
+  .tabs
+    .tabs_item.active
+      = link_to 'NEW PHOTO', root_path
+    .tabs_item
+      = link_to 'Timeline', timeline_path
   - photos.each do |photo|
     =render 'commons/photo', photo: photo
     
