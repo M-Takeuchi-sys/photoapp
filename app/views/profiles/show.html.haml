@@ -1,3 +1,7 @@
-= render 'commons/profile', user: current_user
+.container
+  = render 'commons/profile', user: current_user
+
+  - @current_user_photos.each do |photo|
+    = render 'commons/photo', photo: photo
 
 = javascript_pack_tag 'profile'
