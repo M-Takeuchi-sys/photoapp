@@ -43,5 +43,5 @@ class Photo < ApplicationRecord
   def comment_count
     comments.count
   end
-  
+
 end

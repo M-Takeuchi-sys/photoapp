@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = current_user.profile
-    
+
     @current_user_photos = current_user.photos.all.order(created_at: :desc)
   end
 

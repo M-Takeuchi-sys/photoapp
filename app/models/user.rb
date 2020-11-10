@@ -83,9 +83,6 @@ class User < ApplicationRecord
   def follower_count
     follower_relationships.count
   end
-  
-  
-  
 
   private
   def get_user_id(user)
