@@ -108,39 +108,4 @@ $image_size: 76px;
       }
     }
   }
-
-  &_photo {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 110px 110px;
-    padding-top: 10px;
-
-    &_one {
-      grid-column: 1 / 2;
-      grid-row: 1 / 3;
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &_two {
-
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &_three {
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
 }

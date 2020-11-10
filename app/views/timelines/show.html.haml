@@ -1,0 +1,15 @@
+.container
+  = link_to new_photo_path do
+    .float_btn
+      %i.fa.fa-camera.fa-2x
+  = render 'commons/tabs'
+  .timeline
+    %h3 New Photos Everyone Likes
+  - @photos_like_count.each do |photo|
+    = render 'commons/photo', photo: photo
+  .timeline
+    %h3 Following Photos
+  - @photos.each do |photo|
+    = render 'commons/photo', photo: photo
+
+= javascript_pack_tag 'photo'

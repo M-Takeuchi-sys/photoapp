@@ -1,0 +1,19 @@
+.photo#photo-id{data: {phhoto_: photo.id}}
+  .photo_detail
+    = link_to account_path(photo.user) do
+      = image_tag photo.user.avatar_image
+    %div
+      %p= photo.user.account
+      %p= photo.display_created_at
+    - if user_signed_in? && current_user.has_written?(photo) #ログインして尚且つ自分の写真か
+      .photo_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to 'Edit', edit_photo_path(photo)
+            = link_to 'Delete', photo_path(photo), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  = render 'commons/photoimage', photo: photo
+  = render 'commons/photoicon', photo: photo
+  .photo_content
+    .photo_title
+      %p= photo.content
