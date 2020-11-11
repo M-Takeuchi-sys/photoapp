@@ -41,14 +41,6 @@ class User < ApplicationRecord
     profile || build_profile
   end
 
-  def avatar_image
-    if profile&.avatar&.attached?
-      profile.avatar
-    else
-      'default-avatar.png'
-    end
-  end
-
   def follow!(user)
     user_id = get_user_id(user)
     following_relationships.create!(following_id: user_id)
@@ -70,18 +62,6 @@ class User < ApplicationRecord
 
   def has_liked?(photo)
     likes.exists?(photo_id: photo.id)
-  end
-
-  def photo_count
-    photos.count
-  end
-
-  def following_count
-    following_relationships.count
-  end
-
-  def follower_count
-    follower_relationships.count
   end
 
   private
