@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < Api::ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
@@ -6,11 +6,6 @@ class CommentsController < ApplicationController
     comments = photo.comments
 
     render json: comments, include: { user: [ :profile] }
-  end
-
-  def new
-    photo = Photo.find(params[:photo_id])
-    @comment = photo.comments.build
   end
 
   def create

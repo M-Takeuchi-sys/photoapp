@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.inactive-heart').on('click', (e) => {
     e.preventDefault();
     const id = $(e.currentTarget).attr('id') //クリックしたdivのid取得
-    axios.post(`/photos/${id}/like`)
+    axios.post(`/api/photos/${id}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $(`.active-heart.${id}`).removeClass('hidden')
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.active-heart').on('click', (e) => {
     e.preventDefault();
     const id = $(e.currentTarget).attr('id') //クリックしたdivのid取得
-    axios.delete(`/photos/${id}/like`)
+    axios.delete(`/api/photos/${id}/like`)
       .then((response) => {
         if (response.data.status === 'ok') {
           $(`.active-heart.${id}`).addClass('hidden')

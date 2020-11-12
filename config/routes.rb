@@ -9,10 +9,7 @@ Rails.application.routes.draw do
   root to: 'photos#index'
   resource :timeline, only: [:show]
 
-  resources :photos do
-    resource :like, only: [:create, :destroy]
-    resources :comments, only: [:index, :new, :create]
-  end
+  resources :photos
 
   resources :accounts, only: [:show] do
     resources :followings, only: [:index]
@@ -21,4 +18,11 @@ Rails.application.routes.draw do
   end
 
   resource :profile, only: [:show, :update]
+
+  namespace :api, defaults: {format: :json} do
+    scope '/photos/:photo_id' do
+      resources :comments, only: [:index, :create]
+      resource :like, only: [:create, :destroy]
+    end
+  end
 end
