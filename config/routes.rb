@@ -7,12 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'photos#index'
-  resource :timeline, only: [:show]
 
-  resources :photos do
-    resource :like, only: [:create, :destroy]
-    resources :comments, only: [:index, :new, :create]
-  end
+  resources :photos
 
   resources :accounts, only: [:show] do
     resources :followings, only: [:index]
@@ -20,5 +16,15 @@ Rails.application.routes.draw do
     resources :unfollows, only: [:create]
   end
 
-  resource :profile, only: [:show, :update]
+  scope module: :apps do
+    resource :profile, only: [:show, :update]
+    resource :timeline, only: [:show]
+  end
+
+  namespace :api, defaults: {format: :json} do
+    scope '/photos/:photo_id' do
+      resources :comments, only: [:index, :create]
+      resource :like, only: [:create, :destroy]
+    end
+  end
 end

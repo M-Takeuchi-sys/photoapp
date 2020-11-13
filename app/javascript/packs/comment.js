@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#photo-show').data()
   const photoId = dataset.photoId
 
-  axios.get(`/photos/${photoId}/comments`)
+  axios.get(`/api/photos/${photoId}/comments`)
     .then((response) => {
       const comments = response.data
       comments.forEach((comment) => {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!content) {
       window.alert('コメントを入力してください')
     } else {
-      axios.post(`/photos/${photoId}/comments`, {
+      axios.post(`/api/photos/${photoId}/comments`, {
         comment: {content: content}
       })
         .then((res) => {
