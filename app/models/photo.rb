@@ -15,7 +15,7 @@
 class Photo < ApplicationRecord
   validates :content, presence: true
 
-  validate :images_presence #ここのvalidateで保存できていない
+  validate :images_presence
 
   has_many_attached :images
   has_many :comments, dependent: :destroy
