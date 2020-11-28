@@ -19,7 +19,7 @@ RSpec.describe "Photos", type: :request do
 
       it '記事が保存される' do
         photo_params = attributes_for(:photo)
-        post photos_path({photo: photo_params})
+        post photos_path({content: 'aaaaaaa', images: []})
         expect(response).to have_http_status(302)
         expect(Photo.last.content).to eq(photo_params[:content])
       end

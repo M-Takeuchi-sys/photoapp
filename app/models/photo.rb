@@ -27,8 +27,8 @@ class Photo < ApplicationRecord
       if images.count >= 4
         errors.add(:images, 'は3つまで指定できます')
       end
-    # else
-    #   errors.add(:images, 'ファイルを添付してください')
+    else
+      errors.add(:images, 'ファイルを添付してください')
     end
   end
 end
