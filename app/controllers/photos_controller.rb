@@ -48,6 +48,9 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
+    puts '----------------'
+    puts params
+    puts '----------------'
     params.require(:photo).permit(:content, images: [])
   end
 end
