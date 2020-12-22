@@ -30,6 +30,7 @@ gem 'devise'
 gem 'faker'
 gem 'hamlit'
 gem 'sidekiq'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
